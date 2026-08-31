@@ -32,6 +32,20 @@ function sortear() {
         alert('O valor inicial não pode ser maior que o valor final.');
         return;
     }
+    const sorteados = [];
+
+for (let i = 0; i < quantidade; i++) {
+    const numero = Math.floor(
+        Math.random() * (fim - inicio + 1)
+    ) + inicio;
+    sorteados.push(numero);
+}
+
+const resultado = document.getElementById('resultado');
+resultado.innerHTML =
+    '<label class="texto__paragrafo">' +
+    `Números sorteados: ${sorteados.join(', ')}` +
+    '</label>';
 
 }
 
